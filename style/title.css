@@ -1,0 +1,15 @@
+.title {
+    width: 100%;
+    max-width: 32rem;
+    margin-inline: auto;
+    p {
+        font: var(--overline);
+        color: var(--content-secondary);
+        text-transform: uppercase;
+    }
+    h1 {
+        font: var(--display-lg);
+        color: var(--content-primary);
+        text-transform: uppercase;
+    }
+}
