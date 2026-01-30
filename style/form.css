@@ -206,3 +206,12 @@ form {
         background: linear-gradient( 90deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
     }
 }
+
+@media (width <= 48rem) {
+    form{
+        margin-top: 2.625rem;
+        max-width: 19.9375rem;
+        justify-content: center;
+        margin-inline: auto;
+    }
+}

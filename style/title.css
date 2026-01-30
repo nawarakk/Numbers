@@ -12,3 +12,17 @@
         text-transform: uppercase;
     }
 }
+
+@media (width <=48rem ) {
+   .title{
+        max-width: 19.9375rem;
+        margin-inline: auto;
+        display: grid;
+        justify-content: center;
+
+        h1 {
+            font: var(--display-md);
+        }
+    }
+
+}

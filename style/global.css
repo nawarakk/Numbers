@@ -86,3 +86,14 @@ body {
         align-items: center
     }
 }
+
+@media (width <= 48rem) {
+    body{
+        grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        ;
+    }
+}
