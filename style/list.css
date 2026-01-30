@@ -1,0 +1,22 @@
+ul {
+    list-style: none;
+    margin-top:  2.375rem;
+    display: grid;
+    gap: 2.25rem;
+    width: 100%;
+    max-width: 24.125rem;
+    & li{
+        display: grid;
+        align-content: end;
+        font: var(--paragrph-md);
+        color: var(--content-brand);
+        background-image: url(../assets/icons/talk.svg);
+        background-repeat: no-repeat;
+        padding-left: 1.5rem;
+
+        & p{
+            font: var(--paragrph-sm);
+            color: var(--content-secondary);
+        }
+    }
+}

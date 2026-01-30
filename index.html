@@ -36,6 +36,50 @@
             </p>
         </li>
     </ul>
-    <script src="scripts.js"></script>
+
+    <div class="form">
+        <form>
+            <div>
+                <h2>Quero sortear:</h2>
+                <p>
+                    Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!
+                </p>
+            </div>
+            <div id="forms">
+                <fieldset>
+                    <legend>Números</legend>
+                    <div class="input-wrapper">
+                        <input type="text" id="number" value="2">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>De</legend>
+                    <div class="input-wrapper">
+                        <input type="text" id="from" value="1">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Até</legend>
+                    <div class="input-wrapper">
+                        <input type="text" id="to" value="100">
+                    </div>
+                </fieldset>
+            </div>
+            <fieldset class="flex gap-05 align-items">
+                <input type="checkbox" id="chk">
+                <label for="chk" class="switch">
+                    <span class="slider"></span>
+                </label>
+                <span>Não repetir número</span>
+            </fieldset>
+            
+            <button type="submit">
+                Sortear 
+                <img src="assets/icons/arrow.svg" alt="ceta">
+            </button>
+        </form>
+    </div>
+    <script src="scripts.js">
+    </script>
 </body>
 </html>

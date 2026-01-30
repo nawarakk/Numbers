@@ -24,9 +24,9 @@
     --accent-lime: #D1DC97;
     --accent-red: #E9A9B3;
 
-    --gradient-border: #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%;
-    --gradient-background: #D586E0 0%, #91A1FA 98.93%;
-    --gradient-content: #C7C9CC 0%, #3D3D3D 100%;
+    --gradient-border: linear-gradient( 90deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+    --gradient-background: linear-gradient(#D586E0 0%, #91A1FA 98.93%);
+    --gradient-content: linear-gradient(#C7C9CC 0%, #3D3D3D 100%);
 
 
     --ff-sora: "Sora", sans-serif;
@@ -41,7 +41,7 @@
 
     --paragrph-lg: 500 1rem/150% var(--ff-roboto-flex);
     --paragrph-md: 500 .875rem/150% var(--ff-roboto-flex);
-    --paragrph-sm: 500 .75rem/150% var(--ff-roboto-flex);
+    --paragrph-sm: 400 .75rem/150% var(--ff-roboto-flex);
     --label-md: 700 1.25rem/150% var(--ff-roboto-flex);
     --label-sm: 700 1rem/150% var(--ff-roboto-flex);
 }
@@ -52,4 +52,37 @@ body {
 
     width: 100%;
     max-width: 70.25rem;
+    display: grid;
+    margin-inline: auto;
+
+    grid-template-areas:
+        "a a"
+        "b c"
+        "d c"
+    ;
+
+    header{
+        grid-area: a;
+    }
+    .title {
+        grid-area: b;
+    }
+    ul {
+        grid-area: d;
+    }
+    .form {
+        grid-area: c;
+    }
+
+    & .flex {
+        display: flex;
+    }
+
+    & .gap-05 {
+        gap: .5rem;
+    }
+
+    & .align-items {
+        align-items: center
+    }
 }
