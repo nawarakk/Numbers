@@ -20,3 +20,16 @@ to.oninput = () => {
     let value = to.value.replace(/\D/g, "")
     to.value = value
 }
+
+//Captura o evento de submit do fomulário para obter os valores.
+form.onsubmit = (event) => {
+    event.preventDefault()
+
+    const raffle = {
+        number: number.value,
+        from: from.value,
+        to: to.value,
+        repeat: repeat.checked,
+    }
+
+}
