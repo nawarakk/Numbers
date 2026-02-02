@@ -23,7 +23,6 @@ ul {
 
 @media (width <= 48rem) {
     ul {
-        max-width: 24.125rem;
         margin-inline: auto;
     }
 }

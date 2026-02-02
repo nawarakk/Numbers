@@ -38,6 +38,7 @@
     --display-sm: 700 2rem/130% var(--ff-sora);
 
     --overline: 700 1rem/150% var(--ff-roboto-mono);
+    --result: 700 2rem/150% var(--ff-roboto-mono);
 
     --paragrph-lg: 500 1rem/150% var(--ff-roboto-flex);
     --paragrph-md: 500 .875rem/150% var(--ff-roboto-flex);
@@ -70,7 +71,7 @@ body {
     ul {
         grid-area: d;
     }
-    .form {
+    .right {
         grid-area: c;
     }
 
@@ -93,7 +94,6 @@ body {
         "a"
         "b"
         "c"
-        "d"
-        ;
+        "d";
     }
 }
