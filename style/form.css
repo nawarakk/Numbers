@@ -3,6 +3,7 @@ form {
     max-width: 30.125rem;
     display: grid;
     gap: 2.5rem;
+    overflow: hidden;
 
     & div{
         & h2 {
@@ -209,9 +210,25 @@ form {
 
 @media (width <= 48rem) {
     form{
+        display: grid;
+        justify-content: start;
         margin-top: 2.625rem;
+        width: 100%;
         max-width: 19.9375rem;
-        justify-content: center;
+        height: 24rem;
         margin-inline: auto;
+
+        & #forms {
+            & fieldset {
+                .input-wrapper {
+                    width: 5.375rem;
+                }
+
+                & input[type="text"] {
+                    max-width: 5.375rem;
+                    padding: .25rem .5rem;
+                }
+            }
+        }
     }
 }

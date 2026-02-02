@@ -95,5 +95,12 @@ body {
         "b"
         "c"
         "d";
+
+        .right{
+            width: 19.9375rem;
+            height: 27rem;
+            display: grid;
+            margin-inline: auto;
+        }
     }
 }
