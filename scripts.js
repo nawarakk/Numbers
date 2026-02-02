@@ -39,7 +39,7 @@ form.onsubmit = (event) => {
     }
 
     //Condição que garente que a quantidade de números sorteados não será maior que o intervalo escolhido
-    if (raffle.number > (raffle.to - raffle.from + 1)) {
+    if (raffle.repeat === true && raffle.number > (raffle.to - raffle.from + 1)) {
         alert("Quantidade inválida: o intervalo não possui números suficientes para o sorteio.")
         return
     }
