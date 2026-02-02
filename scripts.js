@@ -32,4 +32,26 @@ form.onsubmit = (event) => {
         repeat: repeat.checked,
     }
 
+    //Condição que garante que o espaço de intervalo exista
+    if (raffle.from > raffle.to) {
+        alert("O valor inicial deve ser menor que o valor final do intervalo.")
+        return
+    }
+
+    //Condição que garente que a quantidade de números sorteados não será maior que o intervalo escolhido
+    if (raffle.number > (raffle.to - raffle.from + 1)) {
+        alert("Quantidade inválida: o intervalo não possui números suficientes para o sorteio.")
+        return
+    }
+    raffleAdd(raffle)
 }
+
+
+/*function raffleAdd(raffle) {
+    try {
+
+    } catch (error) {
+        alert("Não foi possivel realizar o sorteio.")
+        console.log(error)
+    }
+}*/
