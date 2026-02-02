@@ -4,6 +4,10 @@ const number = document.getElementById("number")
 const from = document.getElementById("from")
 const to = document.getElementById("to")
 const repeat = document.getElementById("chk")
+const result = document.createElement("span")
+const right = document.querySelector(".right")
+result.classList.add("result")
+
 
 //Captura o evento de input para aceitar apenas números
 number.oninput = () => {
@@ -43,15 +47,42 @@ form.onsubmit = (event) => {
         alert("Quantidade inválida: o intervalo não possui números suficientes para o sorteio.")
         return
     }
+
     raffleAdd(raffle)
 }
 
 
-/*function raffleAdd(raffle) {
+function raffleAdd(raffle) {
     try {
+       form.remove()
+
+       //Cria a area de resultado
+       const area = document.createElement("div")
+       area.classList.add("result-area")
+
+       const title = document.createElement("h2")
+       title.textContent = `Resultado do sorteio`
+
+       const subTitle = document.createElement("p")
+       subTitle.textContent = `1º Resultado`
+
+       const numberResult = document.createElement("div")
+       numberResult.classList.add("number-result")
+
+       const animationNumber = document.createElement("div")
+       animationNumber.classList.add("animation-number")
+
+       const button = document.createElement("button")
+       button.innerHTML = `
+       Sortear novamente
+       <img src="assets/icons/back.svg" alt="Ícone de voltar">`
+
+        area.append (title, subTitle, numberResult, button)
+        numberResult.appendChild(animationNumber)
+        right.append(area)
 
     } catch (error) {
         alert("Não foi possivel realizar o sorteio.")
         console.log(error)
     }
-}*/
+}
