@@ -69,6 +69,7 @@
 @media (width <= 48rem) {
     .result-area {
         max-width: 19.9375rem;
+        margin-top: 4.375rem;
         margin-inline: auto;
         height: 18.375rem;
     }
