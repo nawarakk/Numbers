@@ -73,7 +73,7 @@ form.onsubmit = (event) => {
 function raffleAdd(result) {
     try {
         //Remove o formulario inicial
-        form.remove()
+        right.innerHTML = ""
 
         //Cria a area de resultado
         const area = document.createElement("div")
@@ -88,24 +88,37 @@ function raffleAdd(result) {
         const numberResult = document.createElement("div")
         numberResult.classList.add("number-result")
 
+        const delay = 2000
+
         //Cria uma animação e uma div para cada resultado do Array
         result.forEach((num, index)=> {
-            const animationNumber = document.createElement("div")
-            animationNumber.classList.add("animation-number")
-            const resultSpan = document.createElement("span")
-            resultSpan.classList.add("result")
-            resultSpan.textContent = num
-            animationNumber.appendChild(resultSpan)
-            numberResult.appendChild(animationNumber)
-        }, index * 2000)
+            setTimeout(() => {
+                const animationNumber = document.createElement("div")
+                animationNumber.classList.add("animation-number")
+                const resultSpan = document.createElement("span")
+                resultSpan.classList.add("result")
+                resultSpan.textContent = num
+                animationNumber.appendChild(resultSpan)
+                numberResult.appendChild(animationNumber)
+            }, index * 2000) 
+        })
 
         const button = document.createElement("button")
-        button.type = 'submit'
+        button.style.display = "none"
         button.innerHTML = `Sortear novamente
        <img src="assets/icons/back.svg" alt="Ícone de voltar">`
 
-        area.append (title, subTitle, numberResult, button)
+        const totalTime = (result.length - .5) * delay
 
+        setTimeout(() => {
+            button.style.display = "flex"
+        }, totalTime + 500)
+        
+        button.addEventListener("click", () => {
+            window.location.reload()
+        })
+
+        area.append (title, subTitle, numberResult, button)
         right.append(area)
 
     } catch (error) {
