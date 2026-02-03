@@ -1,9 +1,8 @@
 form {
     width: 100%;
-    max-width: 30.125rem;
+    max-width: 33rem;
     display: grid;
     gap: 2.5rem;
-    overflow: hidden;
 
     & div{
         & h2 {
@@ -114,6 +113,7 @@ form {
         width: 100%;
         max-width: 30.125rem;
         padding-block: 1rem;
+        
 
         font: var(--label-sm);
         color: var(--content-primary);
