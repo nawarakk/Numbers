@@ -30,9 +30,9 @@ form.onsubmit = (event) => {
     event.preventDefault()
 
     const raffle = {
-        number: number.value,
-        from: from.value,
-        to: to.value,
+        number: Number(number.value),
+        from: Number(from.value),
+        to: Number(to.value),
         repeat: repeat.checked,
     }
 
@@ -48,33 +48,51 @@ form.onsubmit = (event) => {
         return
     }
 
+
+    let result = []
+    if (raffle.repeat) {
+        result = sortedWithoutRepetion(
+            raffle.number,
+            raffle.from,
+            raffle.to
+        )
+    } else {
+        result = sortedWithRepetion(
+            raffle.number,
+            raffle.from,
+            raffle.to
+        )
+    }
+     
+    console.log(result)
+
     raffleAdd(raffle)
 }
 
 
 function raffleAdd(raffle) {
     try {
-       form.remove()
+        //Remove o formulario inicial
+        form.remove()
 
-       //Cria a area de resultado
-       const area = document.createElement("div")
-       area.classList.add("result-area")
+        //Cria a area de resultado
+        const area = document.createElement("div")
+        area.classList.add("result-area")
 
-       const title = document.createElement("h2")
-       title.textContent = `Resultado do sorteio`
+        const title = document.createElement("h2")
+        title.textContent = `Resultado do sorteio`
 
-       const subTitle = document.createElement("p")
-       subTitle.textContent = `1º Resultado`
+        const subTitle = document.createElement("p")
+        subTitle.textContent = `1º Resultado`
 
-       const numberResult = document.createElement("div")
-       numberResult.classList.add("number-result")
+        const numberResult = document.createElement("div")
+        numberResult.classList.add("number-result")
 
-       const animationNumber = document.createElement("div")
-       animationNumber.classList.add("animation-number")
+        const animationNumber = document.createElement("div")
+        animationNumber.classList.add("animation-number")
 
-       const button = document.createElement("button")
-       button.innerHTML = `
-       Sortear novamente
+        const button = document.createElement("button")
+        button.innerHTML = `Sortear novamente
        <img src="assets/icons/back.svg" alt="Ícone de voltar">`
 
         area.append (title, subTitle, numberResult, button)
@@ -85,4 +103,43 @@ function raffleAdd(raffle) {
         alert("Não foi possivel realizar o sorteio.")
         console.log(error)
     }
+}
+
+
+//Sorteio de números com repetição
+function sortedWithRepetion(qnt, min, max) {
+  const result = []
+
+  for (let i = 0; i < qnt; i++) {
+    const number = Math.floor(Math.random() * (max - min + 1)) + min
+    result.push(number)
+  }
+
+  return result
+}
+
+//Sorteio de números sem repetição
+function sortedWithoutRepetion (qnt, min, max) {
+    const result = []
+
+    //Cria array de números possiveis
+    const spaceSample = []
+    for (let i = min; i <= max; i++) {
+       spaceSample.push(i) 
+    }
+
+    //sorteia os números
+    for (let i = 0; i < qnt; i++) {
+    const index = Math.floor(Math.random() * spaceSample.length)
+
+    const number = spaceSample[index]
+
+    //Guarda o número sorteado dentro do array (result)
+    result.push(number)
+
+    //Remove o número sorteado do Array disponivel
+    spaceSample.splice(index, 1)
+  }
+
+  return result
 }
