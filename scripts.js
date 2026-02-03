@@ -66,11 +66,11 @@ form.onsubmit = (event) => {
      
     console.log(result)
 
-    raffleAdd(raffle)
+    raffleAdd(result)
 }
 
 
-function raffleAdd(raffle) {
+function raffleAdd(result) {
     try {
         //Remove o formulario inicial
         form.remove()
@@ -88,15 +88,24 @@ function raffleAdd(raffle) {
         const numberResult = document.createElement("div")
         numberResult.classList.add("number-result")
 
-        const animationNumber = document.createElement("div")
-        animationNumber.classList.add("animation-number")
+        //Cria uma animação e uma div para cada resultado do Array
+        result.forEach((num, index)=> {
+            const animationNumber = document.createElement("div")
+            animationNumber.classList.add("animation-number")
+            const resultSpan = document.createElement("span")
+            resultSpan.classList.add("result")
+            resultSpan.textContent = num
+            animationNumber.appendChild(resultSpan)
+            numberResult.appendChild(animationNumber)
+        }, index * 2000)
 
         const button = document.createElement("button")
+        button.type = 'submit'
         button.innerHTML = `Sortear novamente
        <img src="assets/icons/back.svg" alt="Ícone de voltar">`
 
         area.append (title, subTitle, numberResult, button)
-        numberResult.appendChild(animationNumber)
+
         right.append(area)
 
     } catch (error) {
