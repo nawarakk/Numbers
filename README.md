@@ -5,7 +5,4 @@
 Aplicação desenvolvida em JavaScript para sorteio de números de forma personalizada e interativa.
 O usuário pode definir a quantidade de números, o intervalo mínimo e máximo e escolher entre sorteio com ou sem repetição.
 
-## 🛠️ Tecnologias
-
-<img> https://img.shields.io/badge/JavaScript-grey?style=for-the-badge&logo=javascript</img>
 
