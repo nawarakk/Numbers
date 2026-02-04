@@ -63,8 +63,6 @@ form.onsubmit = (event) => {
             raffle.to
         )
     }
-     
-    console.log(result)
 
     raffleAdd(result)
 }
